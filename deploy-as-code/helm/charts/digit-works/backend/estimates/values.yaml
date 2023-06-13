@@ -89,6 +89,13 @@ env: |
     value: "update-estimate"
   - name: KAFKA_TOPICS_NOTIFICATION_SMS
     value: "egov.core.notification.sms"
+  - name: KAFKA_TOPICS_WORKS_NOTIFICATION_SMS
+    value: "works.notification.sms"
+  - name: SMS_ISADDTIONALFIELDREQUIRED
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: sms-isAdditonalFieldRequired
   {{- if index .Values "estimate-default-limit" }}
   - name: ESTIMATE_DEFAULT_LIMIT
     value: {{ index .Values "estimate-default-limit" | quote }} 

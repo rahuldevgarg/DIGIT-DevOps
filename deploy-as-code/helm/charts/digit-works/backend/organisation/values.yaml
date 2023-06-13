@@ -89,6 +89,13 @@ env: |
     value: "update-org"
   - name: KAFKA_TOPICS_NOTIFICATION_SMS
     value: "egov.core.notification.sms"
+  - name: KAFKA_TOPICS_WORKS_NOTIFICATION_SMS
+    value: "works.notification.sms"
+  - name: SMS_ISADDTIONALFIELDREQUIRED
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: sms-isAdditonalFieldRequired 
   {{- if index .Values "org-default-limit" }}
   - name: ORG_DEFAULT_LIMIT
     value: {{ index .Values "org-default-limit" | quote }} 

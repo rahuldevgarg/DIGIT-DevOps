@@ -43,6 +43,12 @@ env: |
     value: egov.core.notification.sms
   - name: KAFKA_TOPICS_NOTIFICATION_SMS_GROUP
     value: egov.core.notification.sms
+  - name: KAFKA_TOPICS_WORKS_NOTIFICATION_SMS_NAME
+    value: works.notification.sms
+  - name: KAFKA_TOPICS_WORKS_NOTIFICATION_SMS_ID
+    value: works.notification.sms
+  - name: KAFKA_TOPICS_WORKS_NOTIFICATION_SMS_GROUP
+    value: works.notification.sms
   {{- if index .Values "sms-config-map" }}
   - name: SMS_CONFIG_MAP
     value: {{ index .Values "sms-config-map" | quote }}
@@ -127,6 +133,11 @@ env: |
       secretKeyRef:
         name: egov-notification-sms
         key: password
+  - name: EGOV_MDMS_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-mdms-service
   {{- if index .Values "sms.provider.class" }}
   - name: SMS_PROVIDER_CLASS
     value: {{ index .Values "sms.provider.class" | quote }} 
@@ -138,6 +149,10 @@ env: |
   {{- if index .Values "sms.senderid" }}
   - name: SMS_SENDERID
     value: {{ index .Values "sms.senderid" | quote }} 
+  {{- end }}
+   {{- if index .Values "sms.departmentid" }}
+  - name: SMS_DEPARTMENTID
+    value: {{ index .Values "sms.departmentid" | quote }} 
   {{- end }}
   {{- if index .Values "sms.provider.contentType" }}
   - name: SMS_PROVIDER_CONTENTTYPE

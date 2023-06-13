@@ -45,6 +45,11 @@ env: |
   {{- if index .Values "tracing-enabled" }}
   - name: TRACER_OPENTRACING_ENABLED
     value: "true" 
+  - name: SMS_ISADDTIONALFIELDREQUIRED
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: sms-isAdditonalFieldRequired
   {{- end }}
   - name: SERVER_CONTEXT_PATH
     value: /contract
@@ -115,6 +120,8 @@ env: |
     value: "update-contract"
   - name: KAFKA_TOPICS_NOTIFICATION_SMS
     value: "egov.core.notification.sms"
+  - name: KAFKA_TOPICS_WORKS_NOTIFICATION_SMS
+    value: "works.notification.sms"
   {{- if index .Values "contract-default-offset" }}
   - name: CONTRACT_DEFAULT_OFFSET
     value: {{ index .Values "contract-default-offset" | quote }}
