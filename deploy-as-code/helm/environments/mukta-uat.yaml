@@ -63,6 +63,7 @@ cluster-configs:
         db-ssl: "false"
         state-level-tenant-id: "od"
         sms-isAdditonalFieldRequired: "true"
+        parent-level-tenant-id: "od"
 
     egov-service-host:
       namespace: [ egov , works , monitoring ]
