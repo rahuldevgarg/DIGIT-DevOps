@@ -126,7 +126,24 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-config
-        key: parent-level-tenant-id       
+        key: parent-level-tenant-id
+   - name: EGOV_HRMS_AUTO_GENERATE_PASSWORD
+    value: "false"
+  - name: EGOV_INDIVIDUAL_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: individual
+  - name: EGOV_INDIVIDUAL_SEARCH_ENDPOINT
+    value: "/individual/v1/_search"
+  - name: EGOV_INDIVIDUAL_CREATE_ENDPOINT
+    value: "/individual/v1/_create"
+  - name: EGOV_INDIVIDUAL_UPDATE_ENDPOINT
+    value: "/individual/v1/_update"
+  - name: EGOV_INDIVIDUAL_DELETE_ENDPOINT
+    value: "/individual/v1/_delete"
+  - name: EGOV_HRMS_USER_SERVICE_QUALIFIER
+    value: "individualService"      
   {{- if index .Values "java-enable-debug" }}
   - name: JAVA_ENABLE_DEBUG
     value: "true"
