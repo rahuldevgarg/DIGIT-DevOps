@@ -88,8 +88,13 @@ env: |
         key: contract-service
   - name: KAFKA_TOPICS_WORKS_NOTIFICATION_SMS
     value: "works.notification.sms"
+  - name: EGOV_ORG_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: organisation  
   - name: SMS_ISADDTIONALFIELDREQUIRED
     valueFrom:
       configMapKeyRef:
         name: egov-config
-        key: sms-isAdditonalFieldRequired
+        key: sms-isAdditonalFieldRequired      
