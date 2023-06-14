@@ -127,7 +127,7 @@ env: |
       configMapKeyRef:
         name: egov-config
         key: parent-level-tenant-id
-   - name: EGOV_HRMS_AUTO_GENERATE_PASSWORD
+  - name: EGOV_HRMS_AUTO_GENERATE_PASSWORD
     value: "false"
   - name: EGOV_INDIVIDUAL_HOST
     valueFrom:
