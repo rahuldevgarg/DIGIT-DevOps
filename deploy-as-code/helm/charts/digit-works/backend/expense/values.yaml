@@ -92,7 +92,12 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
-        key: contract-service      
+        key: contract-service
+  - name: WORKS_ORGANISATION_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: organisation       
   - name: BUSINESS_WORKFLOW_STATUS_MAP
     value: {{ index .Values "business-workflow-status-map" | quote }}
   - name: EXPENSE_BILLING_BILL_CREATE
