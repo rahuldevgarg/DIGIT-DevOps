@@ -62,7 +62,7 @@ cluster-configs:
         es-infra-host: elasticsearch-data-v1.es-cluster
         db-ssl: "false"
         state-level-tenant-id: "od"
-        sms-isAdditonalFieldRequired: "true"
+        sms-isAdditonalFieldRequired: true
         parent-level-tenant-id: "od"
 
     egov-service-host:
