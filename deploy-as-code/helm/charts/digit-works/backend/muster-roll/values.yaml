@@ -88,6 +88,11 @@ env: |
       configMapKeyRef:
         name: egov-config
         key: timezone
+  - name: WORKS_CONTRACT_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: contract-service       
   - name: MUSTERROLL_KAFKA_CREATE_TOPIC
     value: "save-musterroll"
   - name: MUSTERROLL_KAFKA_UPDATE_TOPIC
