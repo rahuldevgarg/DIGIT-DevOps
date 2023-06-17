@@ -64,6 +64,7 @@ cluster-configs:
         state-level-tenant-id: "od"
         sms-isAdditonalFieldRequired: true
         parent-level-tenant-id: "od"
+        java_enable_debug: true 
 
     egov-service-host:
       namespace: [ egov , works , monitoring ]
