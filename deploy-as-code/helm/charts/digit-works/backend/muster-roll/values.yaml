@@ -92,7 +92,12 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
-        key: contract-service       
+        key: contract-service 
+  - name: WORKS_ORGANISATION_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: organisation       
   - name: MUSTERROLL_KAFKA_CREATE_TOPIC
     value: "save-musterroll"
   - name: MUSTERROLL_KAFKA_UPDATE_TOPIC
