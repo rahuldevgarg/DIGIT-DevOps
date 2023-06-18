@@ -97,7 +97,12 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
-        key: organisation       
+        key: organisation  
+  - name: WORKS_EXPENSE_CALCULATOR_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: expense-calculator      
   - name: MUSTERROLL_KAFKA_CREATE_TOPIC
     value: "save-musterroll"
   - name: MUSTERROLL_KAFKA_UPDATE_TOPIC
