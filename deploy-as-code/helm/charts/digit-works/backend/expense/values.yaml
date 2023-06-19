@@ -97,7 +97,29 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
-        key: organisation       
+        key: organisation
+  - name: SMS_ISADDTIONALFIELDREQUIRED
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: sms-isAdditonalFieldRequired
+  - name: KAFKA_TOPICS_WORKS_NOTIFICATION_SMS
+    value: "works.notification.sms"
+  - name: WORKS_CONTRACT_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: contract-service 
+  - name: WORKS_ORGANISATION_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: organisation
+  - name: EGOV_WORKFLOW_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-workflow-v2      
   - name: BUSINESS_WORKFLOW_STATUS_MAP
     value: {{ index .Values "business-workflow-status-map" | quote }}
   - name: EXPENSE_BILLING_BILL_CREATE
