@@ -110,7 +110,6 @@ cluster-configs:
         inbox: "http://inbox.egov:8080/"
         egov-pdf: "http://egov-pdf.egov:8080/"
         expense-calculator: "http://expense-calculator.works:8080/"
-        expenses-billing: "http://expenses-billing.works:8080/"
         expense: "http://expense.works:8080/"
         es-client: http://elasticsearch-data-v1.es-cluster:9200
         es-client-infra: http://elasticsearch-data-infra-v1.es-cluster-infra:9200
