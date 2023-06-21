@@ -76,12 +76,7 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-config
-        key: sms-enabled
-  - name: JAVA_ENABLE_DEBUG
-    valueFrom:
-      configMapKeyRef:
-        name: egov-config
-        key: java_enable_debug      
+        key: sms-enabled     
   - name: SMS_SENDER
     value: {{ index .Values "sms-sender" | quote }}
   - name: SMS_SENDER_REQUESTTYPE
