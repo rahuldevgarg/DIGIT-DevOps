@@ -124,6 +124,11 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: egov-localization
+  - name: EGOV_HRMS_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-hrms      
   - name: CONTEXT_PATH
     value: "/egov-pdf" 
   - name: PROJECT_DETAILS_TEMPLATE
@@ -132,8 +137,10 @@ env: |
     value: "estimate"
   - name: NOMINAL_MUSTER_ROLL_TEMPLATE
     value: "nominal-muster-roll" 
-  - name: WORK_ORDER_TEMPLATE
-    value: "work-order" 
+  - name: WORK_ORDER_IA_TEMPLATE
+    value: "work-order_ia" 
+  - name: WORK_ORDER_IP_TEMPLATE
+    value: "work-order_ip"   
   - name: WORK_ORDER_TEMPLATE_HINDI
     value: "work-order-hindi" 
   - name: WORK_ORDER_TEMPLATE_ODIYA
