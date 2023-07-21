@@ -145,6 +145,10 @@ env: |
     value: "work-order-hindi" 
   - name: WORK_ORDER_TEMPLATE_ODIYA
     value: "work-order-odiya" 
+  - name: WORK_ORDER_TEMPLATE_ODIYA_IA
+    value: "work-order-odiya_ia"  
+  - name: WORK_ORDER_TEMPLATE_ODIYA_IP
+    value: "work-order-odiya_ip"   
   - name: EGOV_HOST
     valueFrom:
       configMapKeyRef:
