@@ -24,6 +24,41 @@ env: |
     value: {{ index .Values "heap" | quote }}
   - name: JAVA_ARGS
     value: {{ index .Values "java-args" | quote }}
+  - name: EGOV_BILL_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: expense
+  - name: EGOV_MDMS_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-mdms-service
+  - name: EGOV_IDGEN_HOST
+    valueFrom: 
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-idgen
+  - name: EGOV_ORGANISATION_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: organisation
+  - name: EGOV_BILL_CALCULATOR_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: expense-calculator
+  - name: EGOV_BANK_ACCOUNT_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: bankaccounts 
+  - name: EGOV_INDIVIDUAL_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: individual       
   {{- if index .Values "tracing-enabled" }}
   - name: TRACER_OPENTRACING_ENABLED
     value: "true" 
