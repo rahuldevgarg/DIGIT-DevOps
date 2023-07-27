@@ -16,6 +16,15 @@ tracing-enabled: true
 heap: "-Xmx192m -Xms192m"
 java-args: ""
 
+# Init Containers Configs
+initContainers:
+  dbMigration:
+    enabled: true
+    schemaTable: "ifms_adapter_schema"
+    image:
+      repository: "ifms-adapter-db"
+
+
 # Additional Container Envs
 env: |
   - name: SERVER_PORT
