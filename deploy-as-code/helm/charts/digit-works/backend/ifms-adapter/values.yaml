@@ -62,6 +62,9 @@ env: |
   {{- if index .Values "ifms-jit-service-endpoint" }}
   - name: IFMS_JIT_SERVICE_ENDPOINT
     value: {{ index .Values "ifms-jit-service-endpoint" | quote }}
+  {{- if index .Values "egov-bill-search-limit" }}
+  - name: EGOV_BILL_SEARCH_LIMIT
+    value: {{ index .Values "egov-bill-search-limit" | quote }}
   {{- end }}
   - name: IFMS_JIT_HOSTNAME
     valueFrom:
