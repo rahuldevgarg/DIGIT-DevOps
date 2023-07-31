@@ -1,6 +1,6 @@
 # Common Labels
 labels:
-  app: "ifms-cronjob-pis"
+  app: "ifms-cronjob-pa"
   group: "digit-works"
 
 namespace: works
@@ -10,14 +10,14 @@ cron:
   
 # Container Configs
 image:
-  repository: "egovio/ifms-cronjob-pis"
+  repository: "egovio/ifms-cronjob-pa"
   tag: "latest"
 
 command: 
   - "python3"
   - "cronJobAPIConfig.py"
 args: 
-  - "PIS"
+  - "PA"
 
 # Additional Container Envs
 env: |
