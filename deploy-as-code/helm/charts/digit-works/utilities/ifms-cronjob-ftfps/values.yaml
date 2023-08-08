@@ -7,16 +7,16 @@ namespace: works
 
 cron:
   schedule: "*/5 * * * *"
-  
+
 # Container Configs
 image:
   repository: "egovio/ifms-cronjob-ftfps"
   tag: "latest"
 
-command: 
+command:
   - "python3"
   - "cronJobAPIConfig.py"
-args: 
+args:
   - "FTFPS"
 
 # Additional Container Envs
@@ -38,7 +38,7 @@ env: |
         key: ifms-adapter
   {{- if index .Values "user-name" }}
   - name: USER_NAME
-   value: {{ index .Values "user-name" | quote }}
+    value: {{ index .Values "user-name" | quote }}
   {{- end }}
 resources: |
   requests: {}
