@@ -138,19 +138,4 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: audit-service
-  - name: IFMS_JIT_CLIENT_ID
-    valueFrom:
-      secretKeyRef:
-        name: ifms-adapter
-        key: client-id
-  - name: IFMS_JIT_CLIENT_SECRET
-    valueFrom:
-      secretKeyRef:
-        name: ifms-adapter
-        key: client-secret
-  - name: IFMS_REQUEST_ENC_SECRET
-    valueFrom:
-      secretKeyRef:
-        name: ifms-adapter
-        key: req-enc-secret    
         
