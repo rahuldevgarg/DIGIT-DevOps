@@ -142,15 +142,15 @@ env: |
     valueFrom:
       secretKeyRef:
         name: ifms-adapter
-        key: clientID
+        key: client-id
   - name: IFMS_JIT_CLIENT_SECRET
     valueFrom:
       secretKeyRef:
         name: ifms-adapter
-        key: clientSecret
+        key: client-secret
   - name: IFMS_REQUEST_ENC_SECRET
     valueFrom:
       secretKeyRef:
         name: ifms-adapter
-        key: reqEncSecret    
+        key: req-enc-secret    
         
