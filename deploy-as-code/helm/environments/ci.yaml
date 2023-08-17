@@ -12,7 +12,7 @@ cluster-configs:
     cert-issuer: "letsencrypt-prod"
     
   git-sync:
-    namespace: monitoring  
+    namespace: monitoring 
 
 jenkins:
   persistence:
